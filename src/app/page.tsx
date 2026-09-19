@@ -22,7 +22,7 @@ export default function Home() {
 			<section className="mx-auto max-w-5xl">
 				<header className="text-center">
 					<h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-						Neighborhood Listing Platform
+						Neighborhood Listing Platform - Feature Branch
 					</h1>
 
 					<p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
