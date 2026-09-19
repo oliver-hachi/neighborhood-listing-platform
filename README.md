@@ -31,8 +31,8 @@ The application has been tested with:
 
 ## Deployment
 
-Deployment URL: TBD
+Deployment URL: https://neighborhood-listing-platform-wine.vercel.app/
 
 ## Repository
 
-GitHub repository: TBD
+GitHub repository: https://github.com/oliver-hachi/neighborhood-listing-platform
