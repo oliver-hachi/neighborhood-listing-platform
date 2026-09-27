@@ -1,57 +1,75 @@
-export default function Home() {
-	const features = [
-		{
-			title: "Listings",
-			description:
-				"Discover local listings, services, resources, and opportunities available in your neighborhood.",
-		},
-		{
-			title: "Neighborhood Sponsors",
-			description:
-				"Connect with local businesses and organizations that support and contribute to the neighborhood.",
-		},
-		{
-			title: "Voice Help",
-			description:
-				"Get helpful information and assistance through voice-based support.",
-		},
-	];
+"use client";
 
-	return (
-		<main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900">
-			<section className="mx-auto max-w-5xl">
-				<header className="text-center">
-					<h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-						Neighborhood Listing Platform - Feature Branch
-					</h1>
+import PropertyCard from "@/components/PropertyCard";
+import SponsorBanner from "@/components/SponsorBanner";
+import SearchFilters from "@/components/SearchFilters";
+import { Property, Sponsor } from "@/types";
 
-					<p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
-						A community-focused platform that helps residents discover local
-						listings, neighborhood sponsors, and helpful resources.
-					</p>
-				</header>
+const SAMPLE_PROPERTIES: Property[] = [
+  {
+    id: "prop-1",
+    title: "Highland Park Modern Craft",
+    price: 649000,
+    location: { address: "1402 Oak Ridge Ln", city: "Austin", state: "TX", zipCode: "78704" },
+    bedrooms: 3,
+    bathrooms: 2,
+    sqft: 1850,
+    imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Two-story modern home with gray exterior siding and front lawn"
+  },
+  {
+    id: "prop-2",
+    title: "Downtown Vista Condo",
+    price: 420000,
+    location: { address: "300 Colorado St #12B", city: "Austin", state: "TX", zipCode: "78701" },
+    bedrooms: 2,
+    bathrooms: 2,
+    sqft: 1100,
+    imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Bright high-rise condo living room with floor-to-ceiling city views"
+  },
+  {
+    id: "prop-3",
+    title: "Sunny Slope Bungalow",
+    price: 515000,
+    location: { address: "812 W 34th St", city: "Austin", state: "TX", zipCode: "78705" },
+    bedrooms: 2,
+    bathrooms: 1,
+    imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80",
+    imageAlt: "Restored single-story brick craftsman bungalow with covered porch"
+  }
+];
 
-				<section aria-labelledby="features-heading" className="mt-12">
-					<h2 id="features-heading" className="sr-only">
-						Platform Features
-					</h2>
+const SAMPLE_SPONSOR: Sponsor = {
+  id: "spon-1",
+  name: "Apex Home Loans",
+  headline: "Get pre-approved in as little as 15 minutes with Apex.",
+  targetUrl: "https://example.com/apex-loans"
+};
 
-					<div className="grid gap-6 md:grid-cols-3">
-						{features.map((feature) => (
-							<article
-								key={feature.title}
-								className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
-							>
-								<h3 className="text-xl font-semibold">{feature.title}</h3>
+export default function App() {
+  return (
+    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <h1 className="mb-6 text-3xl font-extrabold text-slate-900">Featured Homes</h1>
+      <SearchFilters onFilter={() => {}} />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <SponsorBanner sponsor={SAMPLE_SPONSOR} />
+      </div>
+      <section
+  aria-labelledby="available-properties-heading"
+  className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+>
+  <h2
+    id="available-properties-heading"
+    className="col-span-full text-2xl font-bold text-slate-900"
+  >
+    Available Properties
+  </h2>
 
-								<p className="mt-3 leading-7 text-zinc-600">
-									{feature.description}
-								</p>
-							</article>
-						))}
-					</div>
-				</section>
-			</section>
-		</main>
-	);
+  {SAMPLE_PROPERTIES.map((prop) => (
+    <PropertyCard key={prop.id} property={prop} />
+  ))}
+</section>
+    </main>
+  );
 }
