@@ -7,69 +7,160 @@ import { Property, Sponsor } from "@/types";
 
 const SAMPLE_PROPERTIES: Property[] = [
   {
-    id: "prop-1",
-    title: "Highland Park Modern Craft",
-    price: 649000,
-    location: { address: "1402 Oak Ridge Ln", city: "Austin", state: "TX", zipCode: "78704" },
+    property_id: "prop-101",
+    address: "2408 South Congress Ave",
+    city: "Austin",
+    state: "TX",
+    zip_code: "78704",
+    price: 645000,
     bedrooms: 3,
     bathrooms: 2,
-    sqft: 1850,
-    imageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Two-story modern home with gray exterior siding and front lawn"
+    square_feet: 1850,
+    amenities: [
+      "Garage",
+      "Central Air Conditioning",
+      "Fenced Backyard",
+    ],
+    local_sponsors: [
+      {
+        sponsor_id: "spn-701",
+        name: "South Congress Bakery & Cafe",
+        target_url: "https://www.example.com/sponsors/soco-bakery",
+      },
+    ],
   },
   {
-    id: "prop-2",
-    title: "Downtown Vista Condo",
-    price: 420000,
-    location: { address: "300 Colorado St #12B", city: "Austin", state: "TX", zipCode: "78701" },
+    property_id: "prop-102",
+    address: "360 Colorado St, Apt 1402",
+    city: "Austin",
+    state: "TX",
+    zip_code: "78701",
+    price: 520000,
     bedrooms: 2,
     bathrooms: 2,
-    sqft: 1100,
-    imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Bright high-rise condo living room with floor-to-ceiling city views"
+    square_feet: 1100,
+    amenities: [
+      "Fitness Center",
+      "Covered Parking",
+      "Skyline City View",
+    ],
+    local_sponsors: [
+      {
+        sponsor_id: "spn-702",
+        name: "Lady Bird Lake Kayak Rentals",
+        target_url: "https://www.example.com/sponsors/ladybird-kayak",
+      },
+    ],
   },
   {
-    id: "prop-3",
-    title: "Sunny Slope Bungalow",
-    price: 515000,
-    location: { address: "812 W 34th St", city: "Austin", state: "TX", zipCode: "78705" },
+    property_id: "prop-103",
+    address: "1105 East 11th St",
+    city: "Austin",
+    state: "TX",
+    zip_code: "78702",
+    price: 485000,
     bedrooms: 2,
     bathrooms: 1,
-    imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80",
-    imageAlt: "Restored single-story brick craftsman bungalow with covered porch"
-  }
+    square_feet: 1250,
+    amenities: [
+      "Covered Front Porch",
+      "Fenced Private Yard",
+      "Restored Hardwood Floors",
+    ],
+    local_sponsors: [
+      {
+        sponsor_id: "spn-703",
+        name: "Eastside Roasting Company",
+        target_url: "https://www.example.com/sponsors/eastside-coffee",
+      },
+    ],
+  },
+  {
+    property_id: "prop-104",
+    address: "7420 Meadowlark Dr",
+    city: "Denver",
+    state: "CO",
+    zip_code: "80228",
+    price: 725000,
+    bedrooms: 4,
+    bathrooms: 3,
+    square_feet: 2400,
+    amenities: [
+      "Attached Two-Car Garage",
+      "Stone Fireplace",
+      "Flagstone Patio",
+    ],
+    local_sponsors: [
+      {
+        sponsor_id: "spn-704",
+        name: "Foothills Outdoor Gear & Ski",
+        target_url: "https://www.example.com/sponsors/foothills-gear",
+      },
+    ],
+  },
+  {
+    property_id: "prop-105",
+    address: "1750 Humboldt St, Apt 3B",
+    city: "Denver",
+    state: "CO",
+    zip_code: "80218",
+    price: 349000,
+    bedrooms: 1,
+    bathrooms: 1,
+    square_feet: 750,
+    amenities: [
+      "Assigned Parking Space",
+      "Resident Fitness Center",
+      "Landscaped Shared Courtyard",
+    ],
+    local_sponsors: [
+      {
+        sponsor_id: "spn-705",
+        name: "Cheesman Park Florist",
+        target_url: "https://www.example.com/sponsors/cheesman-florist",
+      },
+    ],
+  },
 ];
 
 const SAMPLE_SPONSOR: Sponsor = {
-  id: "spon-1",
-  name: "Apex Home Loans",
-  headline: "Get pre-approved in as little as 15 minutes with Apex.",
-  targetUrl: "https://example.com/apex-loans"
+  id: "sponsor-1",
+  name: "South Congress Bakery & Cafe",
+  headline: "Support a local business in your neighborhood.",
+  targetUrl: "https://www.example.com/sponsors/soco-bakery",
 };
 
 export default function App() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="mb-6 text-3xl font-extrabold text-slate-900">Featured Homes</h1>
+      <h1 className="mb-6 text-3xl font-extrabold text-slate-900">
+        Featured Homes
+      </h1>
+
       <SearchFilters onFilter={() => {}} />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <div className="mb-6">
         <SponsorBanner sponsor={SAMPLE_SPONSOR} />
       </div>
-      <section
-  aria-labelledby="available-properties-heading"
-  className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
->
-  <h2
-    id="available-properties-heading"
-    className="col-span-full text-2xl font-bold text-slate-900"
-  >
-    Available Properties
-  </h2>
 
-  {SAMPLE_PROPERTIES.map((prop) => (
-    <PropertyCard key={prop.id} property={prop} />
-  ))}
-</section>
+      <section
+        aria-labelledby="available-properties-heading"
+        className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <h2
+          id="available-properties-heading"
+          className="col-span-full text-2xl font-bold text-slate-900"
+        >
+          Available Properties
+        </h2>
+
+        {SAMPLE_PROPERTIES.map((property) => (
+          <PropertyCard
+            key={property.property_id}
+            property={property}
+          />
+        ))}
+      </section>
     </main>
   );
 }

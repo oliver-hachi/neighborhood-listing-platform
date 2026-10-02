@@ -36,3 +36,13 @@ Deployment URL: https://neighborhood-listing-platform-wine.vercel.app/
 ## Repository
 
 GitHub repository: https://github.com/oliver-hachi/neighborhood-listing-platform
+
+Page
+├── Filters
+│   └── SearchFilters
+├── Listing Grid
+│   ├── PropertyCard
+│   ├── PropertyCard
+│   ├── PropertyCard
+│   └── SponsorBanner
+└── Footer

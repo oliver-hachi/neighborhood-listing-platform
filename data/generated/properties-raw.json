@@ -1,0 +1,137 @@
+[
+  {
+    "property_id": "PROP-ATX-001",
+    "address": {
+      "street": "2408 S Congress Ave",
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78704"
+    },
+    "price": 645000,
+    "property_details": {
+      "property_type": "Single Family Home",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1850
+    },
+    "amenities": [
+      "Garage",
+      "Central Air Conditioning",
+      "Backyard"
+    ],
+    "sponsors": [
+      {
+        "name": "Barton Springs Mortgage",
+        "sponsor_type": "Lender"
+      }
+    ]
+  },
+  {
+    "property_id": "PROP-ATX-002",
+    "address": {
+      "street": "360 Colorado St, Suite 1402",
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78701"
+    },
+    "price": 520000,
+    "property_details": {
+      "property_type": "Condo",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_feet": 1100
+    },
+    "amenities": [
+      "Fitness Center",
+      "Parking",
+      "City View"
+    ],
+    "sponsors": [
+      {
+        "name": "Urban Skyline Title & Escrow",
+        "sponsor_type": "Title Company"
+      }
+    ]
+  },
+  {
+    "property_id": "PROP-ATX-003",
+    "address": {
+      "street": "1105 E 11th St",
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78702"
+    },
+    "price": 485000,
+    "property_details": {
+      "property_type": "Bungalow",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_feet": 1250
+    },
+    "amenities": [
+      "Covered Porch",
+      "Fenced Yard",
+      "Hardwood Floors"
+    ],
+    "sponsors": [
+      {
+        "name": "Eastside Community Bank",
+        "sponsor_type": "Local Bank"
+      }
+    ]
+  },
+  {
+    "property_id": "PROP-DEN-004",
+    "address": {
+      "street": "7420 Meadowlark Dr",
+      "city": "Denver",
+      "state": "CO",
+      "zip_code": "80228"
+    },
+    "price": 725000,
+    "property_details": {
+      "property_type": "Single Family Home",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_feet": 2400
+    },
+    "amenities": [
+      "Two-Car Garage",
+      "Fireplace",
+      "Patio"
+    ],
+    "sponsors": [
+      {
+        "name": "Rocky Mountain Home Inspections",
+        "sponsor_type": "Home Inspection"
+      }
+    ]
+  },
+  {
+    "property_id": "PROP-DEN-005",
+    "address": {
+      "street": "1750 Humboldt St, Apt 3B",
+      "city": "Denver",
+      "state": "CO",
+      "zip_code": "80218"
+    },
+    "price": 349000,
+    "property_details": {
+      "property_type": "Condo",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_feet": 750
+    },
+    "amenities": [
+      "Assigned Parking",
+      "Fitness Center",
+      "Shared Courtyard"
+    ],
+    "sponsors": [
+      {
+        "name": "Mile High Staging & Design",
+        "sponsor_type": "Interior Staging"
+      }
+    ]
+  }
+]

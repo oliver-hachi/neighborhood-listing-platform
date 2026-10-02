@@ -1,18 +1,22 @@
+
+export interface LocalSponsor {
+  sponsor_id: string;
+  name: string;
+  target_url: string;
+}
+
 export interface Property {
-  id: string;
-  title: string;
+  property_id: string;
+  address: string;
+  city: string;
+  state: string;
+  zip_code: string;
   price: number;
-  location: {
-    address: string;
-    city: string;
-    state: string;
-    zipCode: string;
-  };
   bedrooms: number;
   bathrooms: number;
-  sqft?: number;
-  imageUrl: string;
-  imageAlt: string;
+  square_feet: number;
+  amenities: string[];
+  local_sponsors: LocalSponsor[];
 }
 
 export interface Sponsor {
@@ -20,5 +24,4 @@ export interface Sponsor {
   name: string;
   headline: string;
   targetUrl: string;
-  imageUrl?: string;
 }

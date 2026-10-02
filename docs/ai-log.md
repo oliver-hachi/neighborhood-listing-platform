@@ -1,13 +1,62 @@
 # AI Log
 
-| Tool | Prompt | Output Used | Output Rejected | Verification | Commit |
-|---|---|---|---|---|---|
-| ChatGPT | Explain the proposed web development stack in plain language and explain why each technology is useful for a neighborhood listing platform. | Used the beginner-friendly explanations of Next.js, TypeScript, Tailwind CSS, App Router, and accessible HTML. | The extra AI website-builder content at the end was not relevant to the assignment. | Compared the explanation with the proposed stack and assignment requirements. | TBD |
-| Gemini | Explain the proposed web development stack in plain English and explain why it works for a neighborhood listing platform. | Used explanations about SEO, performance, TypeScript reliability, responsive design, dynamic pages, and accessibility. | Some examples were more advanced than needed for a beginner explanation. | Compared Gemini's explanation with ChatGPT's and the proposed stack. | TBD |
-| Google AI Studio | Provide terminal commands, a simple file and folder plan, and explanations of important files for a beginner building a neighborhood listing platform using Next.js, TypeScript, Tailwind CSS, App Router, and accessible HTML. | Used the suggested Next.js setup approach and the recommended project structure as a reference when creating the application. | Did not use the suggested project name `neighborhood-listings` because the assignment repository is named `neighborhood-listing-platform`. Did not implement the additional listing routes and components yet because the current assignment step only requires the initial app shell. | Compared the recommendations with the assignment requirements and verified the application by running it locally. | TBD |
+ Notes: 
+  - Got folder structure (`src/app`, `src/components`, `src/types`).
+  - Got basic setup commands and basic accessibility rules.
+  - Got basic setup commands and basic accessibility rules.
 
-## Two Differences Identified
+# LAB 2 STEP 2
+AI Tool: Google AI Studio (Gemini)
+Prompt: Give me only the TypeScript prop interfaces for PropertyCard, SponsorBanner, and SearchFilters for a neighborhood property listing website. No component code.
 
-1. ChatGPT focused on Next.js as the overall application framework, while Gemini emphasized SEO and loading performance.
+Review: Gemini suggested several properties. I removed features that were not needed for Lab 2, such as favorites, sharing, and impressions.
 
-2. ChatGPT described the App Router primarily as a system for organizing pages and navigation, while Gemini emphasized dynamic URLs, shared layouts, and many individual listing pages.
+### STEP 9 AND 10
+## Lab 2 - Accessibility Audit
+
+- **Lighthouse Accessibility Score:** 98/100
+- **Passed Audits:** 23/24 automated checks passed 
+- **Manual Keyboard Audit:** Passed. Able to navigate the entire page using only Tab, Shift+Tab, Enter, and Space.
+
+### Identified Issues and fix
+- **Issue:** Heading elements are not in a sequentially-descending order.
+- **Fix:** Changed heading tag in `SponsorBanner.tsx` to `<h2>` to maintain strict sequential heading hierarchy (`<h1>` $\rightarrow$ `<h2>`).
+
+### LAB 3 - DATA CONTRACT REVIEW
+
+## Schema Improvement and Validation
+
+AI Tool: Gemini
+
+Prompt: Review the property listing JSON output against the provided JSON Schema. Identify fields that do not match the schema and explain how the prompt should be improved.
+
+Output Used:
+- Used the feedback to correct the property structure.
+- Changed the sponsor structure to use `local_sponsors`.
+- Added `sponsor_id`, `name`, and `target_url` for each sponsor.
+- Removed fields that were not included in the schema.
+
+Output Rejected:
+- Rejected fields and structures that were not part of the required schema.
+
+Verification:
+- Validated the corrected JSON data using the AJV validator.
+- Validation passed.
+
+## Normalization Review
+
+AI Tools: ChatGPT and Gemini
+
+Prompt: Review the property data structure for possible normalization issues and explain whether amenities and local sponsors should be normalized.
+
+Output Used:
+- Both tools identified that free-text amenities could create inconsistent names and make filtering harder.
+- Both tools identified that embedded sponsor information could cause duplicate data if the application became larger.
+- Both tools suggested that a larger production system could use separate tables for amenities and sponsors.
+
+Decision:
+- For this prototype, I kept `amenities` as a string array and kept `local_sponsors` embedded in each property.
+- A larger version of the application could normalize these into separate structures.
+
+Verification:
+- The final structure follows the JSON Schema and passed the property validation tests.

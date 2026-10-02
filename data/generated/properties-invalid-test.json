@@ -1,0 +1,84 @@
+[
+  {
+    "property_id": "test-valid-001",
+    "address": "100 Main St",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78701",
+    "price": 400000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_feet": 1200,
+    "amenities": [
+      "Garage",
+      "Patio"
+    ],
+    "local_sponsors": [
+      {
+        "sponsor_id": "spn-test-001",
+        "name": "Example Local Sponsor",
+        "target_url": "https://www.example.com/sponsor"
+      }
+    ]
+  },
+  {
+    "address": "101 Main St",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78701",
+    "price": 400000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_feet": 1200,
+    "amenities": [
+      "Garage"
+    ],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "test-negative-price",
+    "address": "102 Main St",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78701",
+    "price": -100,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_feet": 1200,
+    "amenities": [
+      "Garage"
+    ],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "test-bad-zip",
+    "address": "103 Main St",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "7870",
+    "price": 400000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_feet": 1200,
+    "amenities": [
+      "Garage"
+    ],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "test-extra-field",
+    "address": "104 Main St",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78701",
+    "price": 400000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_feet": 1200,
+    "amenities": [
+      "Garage"
+    ],
+    "local_sponsors": [],
+    "unknown_field": "should be rejected"
+  }
+]
