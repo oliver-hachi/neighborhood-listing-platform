@@ -45,4 +45,3 @@ Page
 │   ├── PropertyCard
 │   ├── PropertyCard
 │   └── SponsorBanner
-└── Footer
